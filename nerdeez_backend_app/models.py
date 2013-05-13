@@ -56,6 +56,8 @@ class University(NerdeezModel):
     image = models.CharField(max_length = 250, null=True, blank=True, default="")
     website = models.CharField(max_length = 250, null=True, blank=True, default="")
     
+    def __unicode__(self):
+        return u'%s' % (self.title)
         
 #===============================================================================
 # end nerdeez models
