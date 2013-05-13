@@ -127,7 +127,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'gunicorn',
     'south',
-    'workerim_server_app',
+    'nerdeez_backend_app',
     'tastypie',
     'django.contrib.flatpages',
 #     'easy_thumbnails',
