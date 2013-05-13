@@ -120,16 +120,18 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'south',
-    'grappelli',
-    'storages',
-    'tastypie',
-    'gunicorn',
-    'python-dateutil==2.1',
     # Uncomment the next line to enable the admin:
+    'grappelli',
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    'django.contrib.admindocs',
+    # 'django.contrib.admindocs',
+    'gunicorn',
+    'south',
+    'workerim_server_app',
+    'tastypie',
+    'django.contrib.flatpages',
+#     'easy_thumbnails',
+#     'image_cropping',
 )
 
 # A sample logging configuration. The only tangible logging
