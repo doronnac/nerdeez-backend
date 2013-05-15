@@ -20,6 +20,9 @@ university_url = '/api/v1/university/'
 current_format = 'json'
 
 #------------------------------------------------------------------------------ end constants
+
+#------------------------------------------------------------------------------ begin testing
+
 class UniversityResourceTest(ResourceTestCase):
     fixtures=['universities']
     def setup(self):
@@ -41,5 +44,8 @@ class UniversityResourceTest(ResourceTestCase):
         resp = self.api_client.put(university_url + '1/', current_format, data={'title': "UGOTHACKED"})
         self.assertHttpMethodNotAllowed(resp)
         
+        #test that the user can't delete any university / university data
         resp = self.api_client.delete(university_url + '1/', current_format)
         self.assertHttpMethodNotAllowed(resp)
+        
+#------------------------------------------------------------------------------ end testing
