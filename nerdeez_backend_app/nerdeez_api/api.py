@@ -42,17 +42,11 @@ class NerdeezResource(ModelResource):
     '''
     abstract class with common attribute common to all my rest models
     '''
-    #set read only fields
     class Meta:
         allowed_methods = ['get']
         always_return_data = True
         authentication = Authentication()
         authorization = Authorization()
-        
-        
-#===============================================================================
-# end rest resources
-#===============================================================================
 
   
 #===============================================================================
@@ -71,4 +65,8 @@ class UniversityResource(NerdeezResource):
 
 #===============================================================================
 # end model resources
+#===============================================================================
+
+#===============================================================================
+# end rest resources
 #===============================================================================
