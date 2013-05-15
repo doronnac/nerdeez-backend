@@ -42,6 +42,7 @@ class NerdeezResource(ModelResource):
     '''
     abstract class with common attribute common to all my rest models
     '''
+    
     #set read only fields
     class Meta:
         allowed_methods = ['get']
@@ -64,6 +65,7 @@ class UniversityResource(NerdeezResource):
     '''
     the rest api for the university model is defined here
     '''
+    
     class Meta(NerdeezResource.Meta):
         allowed_methods= ['get', 'post']
         queryset = University.objects.all()
