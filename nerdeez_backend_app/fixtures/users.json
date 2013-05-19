@@ -1,0 +1,19 @@
+[{
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "doronnac", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2013-05-13T17:08:23.933Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$10000$ER6DFnWaxZpm$K1bpeZvKT3+7dAOhC6MSBcibkmU6zolqUMEzhq8yOCI=", 
+        "email": "doron.nachshon@outlook.com", 
+        "date_joined": "2013-05-13T14:34:36.879Z"
+    }
+}
+]

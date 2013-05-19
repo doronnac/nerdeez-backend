@@ -1,0 +1,26 @@
+[
+{
+    "pk": 1, 
+    "model": "nerdeez_backend_app.university", 
+    "fields": {
+        "website": "www.piccoloheartnamek.com", 
+        "modified_date": "2013-05-14T10:18:57.925Z", 
+        "description": "Piccolo's favorite university", 
+        "title": "Namek", 
+        "image": "Image?", 
+        "creation_date": "2013-05-14T10:17:02Z"
+    }
+},
+{
+    "pk": 2, 
+    "model": "nerdeez_backend_app.university", 
+    "fields": {
+        "website": "imawizard.com", 
+        "modified_date": "2013-05-14T11:57:36.046Z", 
+        "description": "Bullshit school", 
+        "title": "Hogwarts", 
+        "image": "wut", 
+        "creation_date": "2013-05-14T11:31:36Z"
+    }
+}
+]
