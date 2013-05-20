@@ -1,9 +1,11 @@
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
+from django.conf import settings
 from django.contrib import admin
 from tastypie.api import Api
 from nerdeez_backend_app.nerdeez_api.api import UniversityResource
+import nerdeez_backend_app.views
 
 admin.autodiscover()
 v1_api = Api(api_name='v1')
@@ -23,4 +25,10 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     (r'^grappelli/', include('grappelli.urls')),
     (r'^api/', include(v1_api.urls)),
+    ('^$', nerdeez_backend_app.views.porthole),
 )
+
+if not settings.DEBUG:    
+    urlpatterns += patterns('',
+                            (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+                            )
