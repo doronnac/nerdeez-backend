@@ -25,7 +25,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     (r'^grappelli/', include('grappelli.urls')),
     (r'^api/', include(v1_api.urls)),
-<<<<<<< HEAD
     ('^$', nerdeez_backend_app.views.porthole),
 )
 
@@ -33,6 +32,3 @@ if not settings.DEBUG:
     urlpatterns += patterns('',
                             (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
                             )
-=======
-)
->>>>>>> f91b1b93564fa956d17b1074cf2452a16bfb78b3
