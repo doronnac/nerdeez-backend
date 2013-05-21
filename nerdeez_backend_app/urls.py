@@ -1,3 +1,15 @@
+'''
+Created on May 20, 2013
+will create the views for the server app
+@author: Doron Nachshon
+@version: 1.0
+@copyright: nerdeez.com
+'''
+
+#===============================================================================
+# begin imports
+#===============================================================================
+
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
@@ -11,7 +23,13 @@ admin.autodiscover()
 v1_api = Api(api_name='v1')
 v1_api.register(UniversityResource())
 
+#===============================================================================
+# end imports
+#===============================================================================
 
+#===============================================================================
+# begin URLs
+#===============================================================================
 
 urlpatterns = patterns('',
     # Examples:
@@ -32,3 +50,7 @@ if not settings.DEBUG:
     urlpatterns += patterns('',
                             (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
                             )
+
+#===============================================================================
+# end URLs
+#===============================================================================
