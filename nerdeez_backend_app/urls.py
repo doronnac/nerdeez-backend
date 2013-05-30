@@ -44,12 +44,13 @@ urlpatterns = patterns('',
     (r'^grappelli/', include('grappelli.urls')),
     (r'^api/', include(v1_api.urls)),
     ('^$', nerdeez_backend_app.views.porthole),
+    #('^proxy/', nerdeez_backend_app.views.proxy),
 )
 
-if not settings.DEBUG:    
-    urlpatterns += patterns('',
+#if not settings.DEBUG:    
+urlpatterns += patterns('',
                             (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-                            )
+                        )
 
 #===============================================================================
 # end URLs
