@@ -69,7 +69,7 @@ STATIC_ROOT = ''
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
-SERVER_URL = os.environ('SERVER_URL');
+SERVER_URL = os.environ['SERVER_URL'];
 
 # Additional locations of static files
 STATICFILES_DIRS = (

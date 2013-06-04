@@ -59,7 +59,7 @@ class UniversityResource(NerdeezResource):
     the rest api for the university model is defined here
     '''
     class Meta(NerdeezResource.Meta):
-        allowed_methods= ['get', 'post']
+        allowed_methods= ['get', 'post', 'put', 'delete'] #put and delete enabled FOR TESTING ONLY!!
         queryset = University.objects.all()
 
 
