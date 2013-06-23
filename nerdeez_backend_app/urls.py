@@ -44,6 +44,7 @@ urlpatterns = patterns('',
     (r'^grappelli/', include('grappelli.urls')),
     (r'^api/', include(v1_api.urls)),
     ('^$', nerdeez_backend_app.views.porthole),
+    (r'^search/', include('haystack.urls')),
     #('^proxy/', nerdeez_backend_app.views.proxy),
 )
 
