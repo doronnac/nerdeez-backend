@@ -13,6 +13,8 @@ contains the db models
 #===============================================================================
 
 from django.db import models
+from djorm_pgfulltext.models import SearchManager
+from djorm_pgfulltext.fields import VectorField
 import datetime
 
 
@@ -55,6 +57,15 @@ class University(NerdeezModel):
     description = models.CharField(max_length = 1000, null=True, blank=True, default="")
     image = models.CharField(max_length = 250, null=True, blank=True, default="")
     website = models.CharField(max_length = 250, null=True, blank=True, default="")
+    
+    search_index = VectorField()
+
+    objects = SearchManager(
+        fields = ('title', 'description'),
+        config = 'pg_catalog.english', # this is default
+        search_field = 'search_index', # this is default
+        auto_update_search_field = True
+    )
     
     def __unicode__(self):
         return u'%s' % (self.title)

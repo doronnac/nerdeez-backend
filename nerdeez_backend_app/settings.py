@@ -129,7 +129,6 @@ INSTALLED_APPS = (
     'south',
     'nerdeez_backend_app',
     'tastypie',
-    'haystack'
     #'django.contrib.flatpages',
 # 'easy_thumbnails',
 # 'image_cropping',
