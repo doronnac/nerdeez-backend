@@ -15,6 +15,7 @@ from tastypie.authorization import Authorization
 from tastypie.authentication import Authentication
 from tastypie.resources import ModelResource
 from nerdeez_backend_app.models import University
+from tastypie import fields
 
 #===============================================================================
 # end imports
@@ -68,13 +69,14 @@ class UniversityResource(NerdeezResource):
         '''
         object_list = super(UniversityResource, self).get_object_list(request)
         ids = []
-        if request.GET.get('search') != None:
-            search_object_list = University.objects.search(request.GET.get('search'))
+        req = request.GET.get('search')
+        if req != None:
+            search_object_list = University.search("req")
             [ids.append(obj.id) for obj in search_object_list]
         if len(ids) > 0:
             object_list = object_list.filter(id__in=ids)
         return object_list
-            
+                   
 #===============================================================================
 # end model resources
 #===============================================================================
