@@ -59,6 +59,9 @@ class University(NerdeezModel):
     image = models.CharField(max_length = 250, null=True, blank=True, default="")
     website = models.CharField(max_length = 250, null=True, blank=True, default="")
     
+    def __unicode__(self):
+        return u'%s' % (self.title)
+    
     @classmethod
     def search(cls, query):
         '''
@@ -68,8 +71,7 @@ class University(NerdeezModel):
         '''
         return cls.objects.filter(Q(title__icontains=query) | Q(description__icontains=query)).order_by('title')
     
-    def __unicode__(self):
-        return u'%s' % (self.title)
+
 
         
 #===============================================================================

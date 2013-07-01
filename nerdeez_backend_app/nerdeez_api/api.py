@@ -71,7 +71,7 @@ class UniversityResource(NerdeezResource):
         ids = []
         req = request.GET.get('search')
         if req != None:
-            search_object_list = University.search("req")
+            search_object_list = University.search(req)
             [ids.append(obj.id) for obj in search_object_list]
         if len(ids) > 0:
             object_list = object_list.filter(id__in=ids)
