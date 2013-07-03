@@ -38,7 +38,7 @@ class UniversityResourceTest(ResourceTestCase):
     
     def test_university_interaction(self):
         '''
-        test1: test that 'get' works. curl http://localhost:8000/api/v1/
+        test1: test that 'get' works. curl --get http://localhost:8000/api/v1/
         test2: test that 'post' works. curl --dump-header - -H "Content-Type: application/json" -X POST --data '{"title": "UniName", "description": "Describing", "image": "UniImg", "website": "uni.ac.il"}' http://localhost:8000/api/v1/university/
         test3: test that put doesn't work. curl --dump-header - -H "Content-Type: application/json" -X PUT --data '{"title": "UniNameAltered", "description": "DescribingAltered", "image": "UniImgAltered", "website": "uni.ac.il"}' http://localhost:8000/api/v1/university/1/
         test4: test that delete doesn't work. curl --dump-header - -H "Content-Type: application/json" -X DELETE  http://localhost:8000/api/v1/university/1/
