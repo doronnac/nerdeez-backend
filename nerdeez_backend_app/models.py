@@ -13,6 +13,9 @@ contains the db models
 #===============================================================================
 
 from django.db import models
+from djorm_pgfulltext.models import SearchManager
+from djorm_pgfulltext.fields import VectorField
+from django.db.models import Q
 import datetime
 
 
@@ -58,6 +61,18 @@ class University(NerdeezModel):
     
     def __unicode__(self):
         return u'%s' % (self.title)
+    
+    @classmethod
+    def search(cls, query):
+        '''
+        used for searching using contains
+        @param query: string of the query to search
+        @return: {QuerySet} all the objects matching the search
+        '''
+        return cls.objects.filter(Q(title__icontains=query) | Q(description__icontains=query)).order_by('title')
+    
+
+
         
 #===============================================================================
 # end nerdeez models

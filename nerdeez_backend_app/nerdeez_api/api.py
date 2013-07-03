@@ -15,6 +15,7 @@ from tastypie.authorization import Authorization
 from tastypie.authentication import Authentication
 from tastypie.resources import ModelResource
 from nerdeez_backend_app.models import University
+from tastypie import fields
 
 #===============================================================================
 # end imports
@@ -61,8 +62,21 @@ class UniversityResource(NerdeezResource):
     class Meta(NerdeezResource.Meta):
         allowed_methods= ['get', 'post', 'put', 'delete'] #put and delete only added for testing
         queryset = University.objects.all()
-
-
+    
+    def get_object_list(self, request):
+        '''
+        search group logic
+        '''
+        object_list = super(UniversityResource, self).get_object_list(request)
+        ids = []
+        req = request.GET.get('search')
+        if req != None:
+            search_object_list = University.search(req)
+            [ids.append(obj.id) for obj in search_object_list]
+        if len(ids) > 0:
+            object_list = object_list.filter(id__in=ids)
+        return object_list
+                   
 #===============================================================================
 # end model resources
 #===============================================================================
