@@ -1,4 +1,4 @@
-# Django settings for nerdeez_backend_app project.
+# Django settings for tutorial_backend_app project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -102,10 +102,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'nerdeez_backend_app.urls'
+ROOT_URLCONF = 'tutorial_backend_app.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'nerdeez_backend_app.wsgi.application'
+WSGI_APPLICATION = 'tutorial_backend_app.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -127,7 +127,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'gunicorn',
     'south',
-    'nerdeez_backend_app',
+    'tutorial_backend_app',
     'tastypie',
     #'django.contrib.flatpages',
 # 'easy_thumbnails',
